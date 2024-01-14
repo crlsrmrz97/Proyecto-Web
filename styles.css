@@ -1,0 +1,430 @@
+:root {
+    --tw-text-opacity: 1; /* Puedes ajustar el valor según tus necesidades */
+  }
+
+.text-fill-color-transparent{
+    -webkit-text-fill-color: transparent;
+}
+
+.leading-\[19px\] {
+    line-height: 19px;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.bg-rainbow {
+    background-image: linear-gradient(90deg,#6101ec,#b389fe 28.12%,#63ffd8 45.83%,#314eff 61.46%,#00c754 81.25%,#ecfe47 91.15%);
+}
+
+.container {
+    display: flex; /* Usa flexbox para alinear los elementos en una fila */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+/* Estilos adicionales según sea necesario */
+.container svg {
+    margin-right: 10px; /* Espacio entre el svg y el texto */
+}
+
+
+.wfb-tabcalc-selector-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    max-width: 400px; /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página horizontalmente */
+}
+
+.wfb-tabcalc-selector-item {
+    background: #020202;
+    color: #fff;
+    width: 30px;
+    border: 1px solid #757272;
+    float: left;
+    margin: 1px;
+    font-weight: bold;
+    padding-top: 1px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    height: 25px; /* Ajusta el alto según tus necesidades */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+	margin: 0 auto;
+
+}
+
+.nav-arrow {
+    background-color: #ee273a;
+    color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 1px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Estilos para los campos de entrada (inputs) */
+input[type="text"],
+input[type="number"] {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    width: 25px; /* Ancho más pequeño */
+    text-align: center; /* Centrar el texto horizontalmente */
+    background-color: #000;
+    margin: 0px 0 0 0;
+    color: #fff;
+}
+
+.logo {
+    width: 45px; /* Ajusta el ancho según tus necesidades */
+  }
+  
+body{
+    background-color: #ee273a;
+}
+
+
+.wfb-tabcalc-matchdays{
+	border: 1px solid #3498db;
+	position: relative;
+	float: left;
+	width: 950px;
+	background: #3498db;
+}
+
+/*Standard Tabelle*/
+.standard_tabelle tr td {
+	text-align: center;
+	nowrap: nowrap;
+}
+
+/*Matches Tabelle*/
+td.wfb-tabcalc-match-date{
+	width: 15%;
+}
+
+td.wfb-tabcalc-match-time {
+	width: 10%;
+}
+
+td.wfb-tabcalc-name-home,
+td.wfb-tabcalc-name-away {
+	width: 26%;
+}
+
+td.wfb-tabcalc-logo-home,
+td.wfb-tabcalc-logo-away {
+	width: 1%;
+}
+
+td.wfb-tabcalc-goals-home,
+td.wfb-tabcalc-goals-away {
+	width: 3%;
+}
+
+td.wfb-tabcalc-divider {
+	width: 5%
+}
+
+.standard_tabelle td.wfb-tabcalc-name-home {
+	text-align: right;
+    
+}
+
+.standard_tabelle td.wfb-tabcalc-name-away {
+	text-align: left;
+}
+
+/*Standing Tabelle*/
+.standard_tabelle  td.wfb-tabcalc-standing-team {
+	text-align: left;
+	/*width: 246px;*/
+}
+
+.standard_tabelle td.ueberschrift-standing-team {
+	text-align: left;
+}
+
+.standard_tabelle td.wfb-tabcalc-standing-logo {
+	width: 5%;
+}
+
+.standard_tabelle td.wfb-tabcalc-standing-group-team {
+	text-align: left;
+	width: 25%;
+}
+
+p.instrucciones span {
+	font-weight: bold;
+}
+
+.wfb-tabcalc-match-date,
+.wfb-tabcalc-match-time{
+	display: none !important;
+}
+
+.standard_tabelle td {
+    line-height: 10px !important;
+    font: 20px/20px 'barlowcondensed-medium';
+
+}
+
+tr.color_id0 td:nth-child(8),
+tr.color_id1 td:nth-child(8),
+tr.color_id2 td:nth-child(8),
+tr.color_id3 td:nth-child(8){
+	display: none !important;
+}
+
+p.instrucciones{
+	font: 17px/20px 'barlowcondensed-medium';
+	text-align: center;
+}
+
+.standard_tabelle td {
+    font: 20px/20px 'barlowcondensed-medium';
+
+}
+
+.wfb-tabcalc-selector-container,
+    #wfb-tabcalc-matchdays {
+	    width: 100%;
+        font-weight: bold;
+	}
+
+	.wfb-tabcalc-selector-container{
+		height: 55px;
+		/*overflow: hidden;*/
+	}
+
+	.fila-botones {
+        text-align: center;
+    }
+	.fila-botones input {
+        margin-top: 22px; /* Ajusta la cantidad de espacio*/
+	}
+
+/* Estilo para la tabla */
+#clasificacion {
+    width: 55%;
+    border-collapse: collapse;
+    margin-top: 15px;
+	margin: 0 auto;
+}
+
+#clasificacion th {
+	background-color: #ee273a;
+    border: 1px solid #ffffff;
+    color: #1E1E1E;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Estilo para las celdas de la tabla */
+#clasificacion td {
+    border: 1px solid #ffffff;
+    padding: 5px;
+    text-align: center;
+}
+
+.resaltado {
+    background: #FBE070;
+    font-weight: bold;
+}
+.peru1{
+    background: #FCEB80;
+    font-weight: bold;
+}
+.peru2{
+    background: #FFF892;
+    font-weight: bold;
+}
+.sudamericana{
+    background: #CCE6FF;
+    font-weight: bold;
+}
+
+.sinmundial{
+	background: #ee273a;
+    font-weight: bold;
+}
+.desciende{
+    background: #FFD0D0;
+    font-weight: bold;
+}
+
+/* Estilo para centrar el encabezado h2 */
+h2 {
+    text-align: center;
+	margin-top: 22px; /* Ajusta la cantidad de espacio*/
+}
+
+.leyendas{
+	display: flex;
+	justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    text-align: center; /* Centrar el texto horizontalmente */
+	margin-top: 10px; /* Ajusta la cantidad de espacio*/
+}
+
+.leyenda{
+    display: inline-block;
+    font: 13px/15px arial;
+    margin: 13px 5px -8px 5px; /* Ajusta los márgenes */
+    width: auto; /* Cambia el ancho a automático para que se ajuste al contenido */
+}
+
+.leyenda i {
+    /*border-radius: 10px;*/
+    display: inline-block;
+    height: 10px;
+    text-align: center;
+    width: 10px;
+}
+	i.amarillo {
+		background: #FBE070;
+		margin-top: 2px;
+	}
+
+    i.amarilloclaro {
+		background: #FCEB80;
+		margin-top: 2px;
+	}
+    i.amarilloclarito {
+		background: #FFF892;
+		margin-top: 2px;
+	}
+	i.celeste {
+		background: #CCE6FF;
+		margin-top: 2px;
+	}
+    i.rosado{
+        background: #FFD0D0;
+        margin-top: 2px;
+    }
+	
+/* Estilo para la leyenda de "Zona de repechaje" */
+.leyenda .celeste {
+    background: #adecec;;
+    margin-top: 2px;
+}
+
+/* Estilo para separar las leyendas con un espacio */
+.leyenda + .leyenda {
+    margin-left: 20px; /* Ajusta el espacio entre las leyendas */
+}
+
+/* Estilo para el primer lugar */
+.primer-lugar {
+    background: #FBE070;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el segundo lugar */
+  .segundo-lugar {
+    background: #FBE070;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el tercer lugar */
+  .tercer-lugar {
+    background: #FCEB80;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el cuarto lugar */
+  .cuarto-lugar {
+    background: #FFF892;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el quinto lugar */
+  .quinto-lugar {
+    background: #CCE6FF;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el sexto lugar */
+  .sexto-lugar {
+    background: #CCE6FF;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el septimo lugar */
+  .septimo-lugar {
+    background: #CCE6FF;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el octavo lugar */
+  .octavo-lugar {
+    background: #CCE6FF;
+    font-weight: bold;
+  }
+
+/* Estilo para el noveno lugar */
+.noveno-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  } 
+  
+  /* Estilo para el decimo lugar */
+  .decimo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+  /* Estilo para el onceavo lugar */
+  .onceavo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+  /* Estilo para el doceavo lugar */
+  .doceavo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+  /* Estilo para el treceavo lugar */
+  .treceavo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+  /* Estilo para el catorceavo lugar */
+  .catorceavo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+/* Estilo para el quinceavolugar lugar */
+.quinceavo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+  /* Estilo para el diecisesavolugar lugar */
+  .diecisesavo-lugar {
+    background: #ee273a;
+    font-weight: bold;
+  }
+  /* Estilo para el diecisieteavolugar lugar */
+  .diecisieteavo-lugar {
+    background: #FFD0D0;
+    font-weight: bold;
+  }
+  /* Estilo para el dieciochoavo lugar */
+  .dieciochoavo-lugar {
+    background: #FFD0D0;
+    font-weight: bold;
+  }
