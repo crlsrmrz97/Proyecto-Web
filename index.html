@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simulador De Resultados Liga 1</title>
+    <script src="funciones.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/liga1.ico">
+
+</head>
+<body>
+    <div class="container">
+        <svg stroke="currentColor" fill="rgb(49, 78, 255)" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 3.3l1.35-.95a8.01 8.01 0 014.38 3.34l-.39 1.34-1.35.46L13 6.7V5.3zm-3.35-.95L11 5.3v1.4L7.01 9.49l-1.35-.46-.39-1.34a8.103 8.103 0 014.38-3.34zM7.08 17.11l-1.14.10A7.938 7.938 0 014 12c0-.12.01-.23.02-.35l1-.73 1.38.48 1.46 4.34-.78 1.37zm7.42 2.48c-.79.26-1.63.41-2.5.41s-1.71-.15-2.50-.41l-.69-1.49.64-1.10h5.11l.64 1.11-.70 1.48zM14.27 15H9.73l-1.35-4.02L12 8.44l3.63 2.54L14.27 15zm3.79 2.21l-1.14-.10-.79-1.37 1.46-4.34 1.39-.47 1 .73c.01.11.02.22.02.34 0 1.99-.73 3.81-1.94 5.21z"></path>
+        </svg>
+        <span class="font-semibold text-xl leading-[19px] bg-rainbow bg-clip-text text-fill-color-transparent">Calculadora Liga 1 2024 - Torneo Apertura</span>
+    </div>
+    <br>    
+        <img src="img/liga1.jpeg" alt="Calculadora Conmebol 2026" title="Pronósticos eliminatorias sudamericanas 2026" loading="lazy" class="img-fluid mx-auto d-block">
+
+<br>
+<br>
+    <div class="wfb-tabcalc-selector-container" id="numbers-container">
+        <!-- Aquí solo se incluyen los números del 1 al 9 inicialmente -->
+        <div class="nav-arrow" id="prev-button"><</div>
+        <div class="wfb-tabcalc-selector-item">1</div>
+        <div class="wfb-tabcalc-selector-item">2</div>
+        <div class="wfb-tabcalc-selector-item">3</div>
+        <div class="wfb-tabcalc-selector-item">4</div>
+        <div class="wfb-tabcalc-selector-item">5</div>
+        <div class="wfb-tabcalc-selector-item">6</div>
+        <div class="wfb-tabcalc-selector-item">7</div>
+        <div class="wfb-tabcalc-selector-item">8</div>
+        <div class="wfb-tabcalc-selector-item">9</div>
+
+<!-- Flecha de siguiente ">" -->
+<div class="nav-arrow" id="next-button">></div>
+    </div>
+
+<p class="instrucciones">Llena las casillas con tus predicciones y chequea cómo se actualiza la tabla. <span>¡Solo hay seis cupos y un repechaje!</span></p>
+        <div id="wfb-tabcalc-matchdays">
+            <div class="wfb-tabcalc-matchdays-container">
+                <!-- Primera Jornada-->
+                <table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-1">
+                <thead></thead>
+                <tbody>
+                    <tr id="wfb-tabcalc-home1924-away1267" class="hell">
+                    <td class="wfb-tabcalc-match-date"></td>
+              <td class="wfb-tabcalc-match-time"></td>
+              <td class="wfb-tabcalc-name-home">UTC</td>
+              <td class="wfb-tabcalc-logo-home">
+                <img src="img/equipos/utc.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo">
+            </td>
+            <td class="wfb-tabcalc-goals-home">
+                <input type="text" id="resultado5" placeholder="">
+            </td>
+            <td class="wfb-tabcalc-divider">vs</td>
+            <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado6" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away">
+        <img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Chile" title="Chile" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">Dep.Garcilaso</td>
+        </tr> 
+                   
+<tr id="wfb-tabcalc-home1005-away1291" class="dunkel">
+<td class="wfb-tabcalc-match-date"></td>
+<td class="wfb-tabcalc-match-time"></td>
+<td class="wfb-tabcalc-name-home">Cienciano</td>
+<td class="wfb-tabcalc-logo-home">
+    <img src="img/equipos/cienciano.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td>
+    <td class="wfb-tabcalc-goals-home">
+        <input type="text" id="resultado3" placeholder="">
+    </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado4" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away">
+            <img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">Comerciantes U.</td>
+    </tr>
+
+<tr id="wfb-tabcalc-home1844-away1573" class="hell">
+    <td class="wfb-tabcalc-match-date"></td>
+    <td class="wfb-tabcalc-match-time"></td>
+    <td class="wfb-tabcalc-name-home">Los Chankas</td>
+    <td class="wfb-tabcalc-logo-home">
+        <img src="img/equipos/loschankas.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td>
+        <td class="wfb-tabcalc-goals-home">
+            <input type="text" id="resultado7" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado8" placeholder="">
+        </td>
+            <td class="wfb-tabcalc-logo-away">
+                <img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo">
+            </td>
+                <td class="wfb-tabcalc-name-away">U.Comercio</td>
+            </tr>
+            
+<tr id="wfb-tabcalc-home1829-away1199" class="dunkel">
+    <td class="wfb-tabcalc-match-date"></td>
+    <td class="wfb-tabcalc-match-time"></td>
+    <td class="wfb-tabcalc-name-home">S.Cristal</td>
+    <td class="wfb-tabcalc-logo-home">
+        <img src="img/equipos/cristal.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo">
+    </td>
+    <td class="wfb-tabcalc-goals-home">
+        <input type="text" id="resultado9" placeholder="">
+    </td>
+    <td class="wfb-tabcalc-divider">vs</td>
+    <td class="wfb-tabcalc-goals-away">
+        <input type="text" id="resultado10" placeholder="">
+    </td>
+    <td class="wfb-tabcalc-logo-away">
+        <img src="img/equipos/adt.png" align="absmiddle" alt="Perú" title="Perú" class="logo">
+    </td>
+    <td class="wfb-tabcalc-name-away">ADT</td>
+</tr>  
+
+<tr id="wfb-tabcalc-home1753-away2130" class="hell">
+    <td class="wfb-tabcalc-match-date"></td>
+    <td class="wfb-tabcalc-match-time"></td>
+    <td class="wfb-tabcalc-name-home">C.A.Manucci</td>
+    <td class="wfb-tabcalc-logo-home">
+        <img src="img/equipos/manucci.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo">
+    </td>
+        <td class="wfb-tabcalc-goals-home">
+            <input type="text" id="resultado11" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado12" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">Universitario</td>
+    </tr>
+
+    <tr id="wfb-tabcalc-home1829-away1199" class="dunkel">
+        <td class="wfb-tabcalc-match-date"></td>
+        <td class="wfb-tabcalc-match-time"></td>
+        <td class="wfb-tabcalc-name-home">FBC Melgar</td>
+        <td class="wfb-tabcalc-logo-home">
+            <img src="img/equipos/melgar.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo">
+        </td>
+        <td class="wfb-tabcalc-goals-home">
+            <input type="text" id="resultado13" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado14" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away">
+            <img src="img/equipos/cuzco.png" align="absmiddle" alt="Perú" title="Perú" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">Cusco FC</td>
+    </tr> 
+
+    <tr id="wfb-tabcalc-home1829-away1199" class="dunkel">
+        <td class="wfb-tabcalc-match-date"></td>
+        <td class="wfb-tabcalc-match-time"></td>
+        <td class="wfb-tabcalc-name-home">Alianza Lima</td>
+        <td class="wfb-tabcalc-logo-home">
+            <img src="img/equipos/alianzalima.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo">
+        </td>
+        <td class="wfb-tabcalc-goals-home">
+            <input type="text" id="resultado15" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado16" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away">
+            <img src="img/equipos/ucv.png" align="absmiddle" alt="Perú" title="Perú" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">César Vallejo</td>
+    </tr> 
+
+    <tr id="wfb-tabcalc-home1829-away1199" class="dunkel">
+        <td class="wfb-tabcalc-match-date"></td>
+        <td class="wfb-tabcalc-match-time"></td>
+        <td class="wfb-tabcalc-name-home">A.Grau</td>
+        <td class="wfb-tabcalc-logo-home">
+            <img src="img/equipos/grau.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo">
+        </td>
+        <td class="wfb-tabcalc-goals-home">
+            <input type="text" id="resultado17" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado18" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away">
+            <img src="img/equipos/sullana.png" align="absmiddle" alt="Perú" title="Perú" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">A.Sullana</td>
+    </tr> 
+    <tr id="wfb-tabcalc-home1829-away1199" class="dunkel">
+        <td class="wfb-tabcalc-match-date"></td>
+        <td class="wfb-tabcalc-match-time"></td>
+        <td class="wfb-tabcalc-name-home">S.Huancayo</td>
+        <td class="wfb-tabcalc-logo-home">
+            <img src="img/equipos/huancayo.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo">
+        </td>
+        <td class="wfb-tabcalc-goals-home">
+            <input type="text" id="resultado19" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-divider">vs</td>
+        <td class="wfb-tabcalc-goals-away">
+            <input type="text" id="resultado20" placeholder="">
+        </td>
+        <td class="wfb-tabcalc-logo-away">
+            <img src="img/equipos/boys.png" align="absmiddle" alt="Perú" title="Perú" class="logo">
+        </td>
+        <td class="wfb-tabcalc-name-away">Sport Boys</td>
+    </tr> 
+</tbody>
+</table>
+
+ <!-- Segunda Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-2" style="display: none;">
+<thead></thead>
+<tbody>
+    <tr id="wfb-tabcalc-home1199-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado21" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado12" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+    <tr id="wfb-tabcalc-home1291-away1829" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado23" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado14" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+    <tr id="wfb-tabcalc-home1573-away1753" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado25" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado16" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+    <tr id="wfb-tabcalc-home1267-away1005" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado27" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado18" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+    <tr id="wfb-tabcalc-home2130-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado20" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+    <tr id="wfb-tabcalc-home2130-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado19" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado20" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+    <tr id="wfb-tabcalc-home2130-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado19" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado20" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+    <tr id="wfb-tabcalc-home2130-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado19" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado20" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+    <tr id="wfb-tabcalc-home2130-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado19" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado20" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+</tbody>
+</table>
+
+<!-- Tercera Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-3" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1005-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado21" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado22" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1291" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado23" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado24" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1573-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado25" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado26" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1829" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado27" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado28" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+    </tbody>
+</table>
+
+<!-- Cuarta Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-4" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1924-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado31" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado32" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1753" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado33" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado34" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1291-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado35" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado36" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1829-away1573" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado37" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado38" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado39" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado40" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado29" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado30" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Quinta Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-5" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1573-away1199" class="hell"><td class="wfb-tabcalc-match-date">08.10.2020</td><td class="wfb-tabcalc-match-time">16:00</td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado41" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado42" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home1291-away2130" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">16:30</td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado43" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado44" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1829" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">18:00</td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado45" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado46" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1844" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">19:00</td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado47" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado48" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">20:00</td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado49" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado50" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">20:00</td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado49" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado50" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">20:00</td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado49" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado50" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">20:00</td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado49" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado50" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time">20:00</td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado49" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado50" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+    </tbody>
+</table>
+
+<!-- Sexta Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-6" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home2130-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado51" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado52" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1753" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado53" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado54" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1829-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado55" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado56" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1924-away1573" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado57" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado58" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado59" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado60" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado59" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado60" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado59" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado60" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado59" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado60" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado59" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado60" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+    </tbody>
+</table>
+
+<!-- Septima Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-7" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1924-away1829" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado61" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado62" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1005" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado63" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado64" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1844-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado65" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado66" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1573-away1291" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado67" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado68" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado69" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado70" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado69" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado70" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado69" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado70" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado69" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado70" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado69" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado70" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+    </tbody>
+</table>
+
+<!-- Octava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-8" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1005-away1753" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado71" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado72" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1291-away1924" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado73" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado74" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1829-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado75" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado76" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1573" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado77" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado78" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado79" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado80" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado79" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado80" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado79" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado80" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado79" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado80" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado79" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado80" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+    </tbody>
+</table>
+
+<!-- Novena Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-9" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1573-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado81" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado82" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1829" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado83" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado84" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado85" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado86" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1291-away1753" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado87" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado88" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado89" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado90" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado89" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado90" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado89" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado90" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado89" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado90" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado89" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado90" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+    </tbody>
+</table>
+
+<!-- Decima Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-10" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1829-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado91" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado92" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1924-away2130" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado93" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado94" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1573" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado95" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado96" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1199" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado97" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado98" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado99" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado100" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado99" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado100" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado99" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado100" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado99" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado100" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado99" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado100" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+    </tbody>
+</table>
+
+<!-- Onceava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-11" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1924-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado101" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado102" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1267" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado103" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado104" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1291-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado105" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado106" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1829-away1753" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado107" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado108" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1573" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado109" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado110" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1573" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado109" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado110" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1573" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado109" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado110" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1573" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado109" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado110" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1573" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado109" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado110" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+    </tbody>
+</table>
+
+<!-- Deceava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-12" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1005-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado111" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado112" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1924" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado113" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado114" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1573-away1829" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado115" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado116" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1199" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado117" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado118" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado119" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado120" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado119" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado120" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado119" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado120" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado119" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado120" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado119" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado120" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+    </tbody>
+</table>
+
+<!-- Treceava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-13" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1924-away1753" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado121" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado122" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home1199-away1573" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado123" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado124" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado125" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado126" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1829-away1267" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado127" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado128" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado129" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado130" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado129" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado130" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado129" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado130" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado129" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado130" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado129" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado130" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+    </tbody>
+</table>
+
+<!-- Catorceava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-14" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1005-away1829" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado131" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado132" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1291-away1199" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado133" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado134" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1573-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado135" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado136" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1844" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado137" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado138" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home1267-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado139" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado140" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1267-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado139" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado140" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home1267-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado139" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado140" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home1267-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado139" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado140" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1267-away2130" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado139" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado140" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+    </tbody>
+</table>
+
+<!-- Quinceava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-15" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1005-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado141" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado142" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home1291-away1573" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado143" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado144" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1829-away1924" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado145" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado146" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+        <tr id="wfb-tabcalc-home1267-away1753" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado147" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado148" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado149" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado150" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado149" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado150" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado149" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado150" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado149" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado150" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home2130-away1844" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado149" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado150" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+    </tbody>
+</table>
+
+<!-- Dieciseisava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-16" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1924-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Alianza Lima</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado151" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado152" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Dep.Garcilaso</td></tr>
+        <tr id="wfb-tabcalc-home1199-away2130" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">ADT</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/adt.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado153" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado154" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">Comerciantes U.</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1829" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Cristal</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cristal.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado155" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado156" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-name-away">U.Comercio</td></tr>
+        <tr id="wfb-tabcalc-home1573-away1267" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">FBC Melgar</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/melgar.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado157" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado158" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">S.Huancayo</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cienciano</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado159" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado160" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/universitario.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Universitario</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Grau</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/grau.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado159" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado160" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Cusco FC</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">C.A.Manucci</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/manucci.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado159" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado160" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/ucv.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">César Vallejo</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Los Chankas</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado159" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado160" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/sullana.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">A.Sullana</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1005" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">UTC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/utc.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado159" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado160" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/boys.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-name-away">Sport Boys</td></tr>
+    </tbody>
+</table>
+
+<!-- Diecisieteava Jornada-->
+<table class="wfb-tabcalc-matchday standard_tabelle" cellpadding="3" cellspacing="1" id="wfb-tabcalc-matchday-17" style="display: none;">
+    <thead></thead>
+    <tbody>
+        <tr id="wfb-tabcalc-home1924-away1199" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">U.Comercio</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/unioncomercio.png" align="absmiddle" alt="Uruguay" title="Uruguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado161" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado162" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cienciano.png" align="absmiddle" alt="Perú" title="Perú" class="logo"></td><td class="wfb-tabcalc-name-away">Cienciano</td></tr>
+        <tr id="wfb-tabcalc-home1005-away1573" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Dep.Garcilaso</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/deportivogarcilazo.png" align="absmiddle" alt="Colombia" title="Colombia" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado163" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado164" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/melgar.png" align="absmiddle" alt="Bolivia" title="Bolivia" class="logo"></td><td class="wfb-tabcalc-name-away">FBC Melgar</td></tr>
+        <tr id="wfb-tabcalc-home1844-away1267" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">S.Huancayo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/huancayo.png" align="absmiddle" alt="Brasil" title="Brasil" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado165" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado166" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/utc.png" align="absmiddle" alt="Chile" title="Chile" class="logo"></td><td class="wfb-tabcalc-name-away">UTC</td></tr>
+        <tr id="wfb-tabcalc-home1829-away2130" class="dunkel"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Comerciantes U.</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/comerciantesunidos.png" align="absmiddle" alt="Paraguay" title="Paraguay" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado167" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado168" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/cristal.png" align="absmiddle" alt="Ecuador" title="Ecuador" class="logo"></td><td class="wfb-tabcalc-name-away">S.Cristal</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Cusco FC</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/cuzco.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado169" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado170" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/alianzalima.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Alianza Lima</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">César Vallejo</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/ucv.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado169" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado170" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/grau.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">A.Grau</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">A.Sullana</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/sullana.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado169" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado170" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/manucci.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">C.A.Manucci</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Universitario</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/universitario.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado169" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado170" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/loschankas.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">Los Chankas</td></tr>
+        <tr id="wfb-tabcalc-home1753-away1291" class="hell"><td class="wfb-tabcalc-match-date"></td><td class="wfb-tabcalc-match-time"></td><td class="wfb-tabcalc-name-home">Sport Boys</td><td class="wfb-tabcalc-logo-home"><img src="img/equipos/boys.png" align="absmiddle" alt="Argentina" title="Argentina" class="logo"></td><td class="wfb-tabcalc-goals-home"><input type="text" id="resultado169" placeholder=""></td><td class="wfb-tabcalc-divider">vs</td><td class="wfb-tabcalc-goals-away"><input type="text" id="resultado170" placeholder=""></td><td class="wfb-tabcalc-logo-away"><img src="img/equipos/adt.png" align="absmiddle" alt="Venezuela" title="Venezuela" class="logo"></td><td class="wfb-tabcalc-name-away">ADT</td></tr>
+    </tbody>
+</table>       
+</div>
+</div>            
+   
+<div class="fila-botones">
+    <input class="btn btn-danger btn-sm" type="button" value="Limpiar" onclick="limpiarTablaPosiciones()">
+    <input class="btn btn-success btn-sm" type="button" value="Calcular" onclick="agregarPartido()">    
+</div>
+
+    <h2>Tabla De Posiciones</h2>
+    <table id="clasificacion">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Equipo</th>
+            <th>PJ</th>
+            <th>PG</th>
+            <th>PE</th>
+            <th>PP</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>Dif</th>
+            <th>Pts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="resaltado">
+            <td class="intacta">1</td>
+            <td class="intacta">ADT</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr class="resaltado">
+            <td class="intacta">2</td>
+            <td class="intacta">A.Sullana</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="peru1">
+            <td class="intacta">3</td>
+            <td class="intacta">Alianza Lima</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="peru2">
+            <td class="intacta">4</td>
+            <td class="intacta">A.Grau</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="sudamericana">
+            <td class="intacta">5</td>
+            <td class="intacta">C.A.Manucci</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="sudamericana">
+            <td class="intacta">6</td>
+            <td class="intacta">Cienciano</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="sudamericana">
+            <td class="intacta">7</td>
+            <td class="intacta">Comerciantes U.</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="sudamericana">
+            <td class="intacta">8</td>
+            <td class="intacta">Cusco FC</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">9</td>
+            <td class="intacta">César Vallejo</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">10</td>
+            <td class="intacta">Dep.Garcilaso</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">11</td>
+            <td class="intacta">Los Chankas</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">12</td>
+            <td class="intacta">FBC Melgar</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">13</td>
+            <td class="intacta">Sport Boys</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">14</td>
+            <td class="intacta">S.Huancayo</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">15</td>
+            <td class="intacta">S.Cristal</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="sinmundial">
+            <td class="intacta">16</td>
+            <td class="intacta">UTC</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="desciende">
+            <td class="intacta">17</td>
+            <td class="intacta">Universitario</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+        <tr class="desciende">
+            <td class="intacta">18</td>
+            <td class="intacta">U.Comercio</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="intacta">0</td>
+        </tr>
+    </tbody>
+    </table>
+    <section class="leyendas">
+        <div class="leyenda"><i class="amarillo"></i> Play-offs y clasifica a la Fase de grupos de la Copa Libertadores 2025</div>
+        <div class="leyenda"><i class="amarilloclaro"></i> Clasifica a la Fase 2 de la Copa Libertadores 2025</div>
+        <div class="leyenda"><i class="amarilloclarito"></i> Clasifica a la Fase 1 de la Copa Libertadores 2025</div>
+        <div class="leyenda"><i class="celeste"></i> Clasifica a la Fase 1 de la Copa Sudamericana 2025</div>
+        <div class="leyenda"><i class="rosado"></i> Desciende a la Liga 2 2025</div>
+    </section>
+</body>
+</html>
